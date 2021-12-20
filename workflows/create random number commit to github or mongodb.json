@@ -48,8 +48,8 @@
         "operation": "edit",
         "owner": "MudOnTire",
         "repository": "n8n-testing",
-        "filePath": "/README.md",
-        "fileContent": "={{$node[\"Function\"].json[\"number\"]}}",
+        "filePath": "README.md",
+        "fileContent": "={{$json[\"number\"]}}",
         "commitMessage": "update random number"
       },
       "name": "GitHub",

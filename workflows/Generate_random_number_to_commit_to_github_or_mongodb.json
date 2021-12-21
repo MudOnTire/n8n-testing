@@ -1,5 +1,5 @@
 {
-  "name": "My workflow 2",
+  "name": "Generate random number to commit to github or mongodb",
   "nodes": [
     {
       "parameters": {},
@@ -7,9 +7,10 @@
       "type": "n8n-nodes-base.start",
       "typeVersion": 1,
       "position": [
-        20,
-        320
-      ]
+        -300,
+        -140
+      ],
+      "disabled": true
     },
     {
       "parameters": {
@@ -19,8 +20,8 @@
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
       "position": [
-        220,
-        320
+        240,
+        460
       ]
     },
     {
@@ -38,8 +39,8 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 1,
       "position": [
-        420,
-        320
+        440,
+        460
       ]
     },
     {
@@ -56,8 +57,8 @@
       "type": "n8n-nodes-base.github",
       "typeVersion": 1,
       "position": [
-        920,
-        140
+        940,
+        280
       ],
       "credentials": {
         "githubApi": {
@@ -77,8 +78,8 @@
       "type": "n8n-nodes-base.mongoDb",
       "typeVersion": 1,
       "position": [
-        920,
-        520
+        940,
+        660
       ],
       "credentials": {
         "mongoDb": {
@@ -103,8 +104,8 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 1,
       "position": [
-        640,
-        520
+        660,
+        660
       ]
     },
     {
@@ -115,9 +116,23 @@
       "type": "n8n-nodes-base.function",
       "typeVersion": 1,
       "position": [
-        640,
-        140
+        660,
+        280
       ]
+    },
+    {
+      "parameters": {
+        "path": "a2017e01-76f7-4b6a-b66d-bfbeee4927e0",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        40,
+        460
+      ],
+      "webhookId": "a2017e01-76f7-4b6a-b66d-bfbeee4927e0"
     }
   ],
   "connections": {
@@ -161,17 +176,6 @@
         ]
       ]
     },
-    "Start": {
-      "main": [
-        [
-          {
-            "node": "Function",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Function1": {
       "main": [
         [
@@ -182,8 +186,25 @@
           }
         ]
       ]
+    },
+    "Start": {
+      "main": [
+        []
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Function",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
-  "active": false,
-  "settings": {}
+  "active": true,
+  "settings": {},
+  "id": 2
 }
